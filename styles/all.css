@@ -1,0 +1,60 @@
+* {
+  box-sizing: border-box;
+}
+
+/* wrapper */
+body {
+  min-width: 768px;
+  background: white;
+}
+
+/* calculator area */
+.header {
+  height: 300px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #424242;
+}
+
+/* record area */
+.content {
+  width: 100%;
+}
+
+/* footer */
+.footer {
+  height: 90px;
+  width: 100%;
+  margin: 0 auto;
+  background: #FFD366;
+  position: fixed;
+  bottom: 0;
+}
+
+
+/*** tools ***/
+.flex-rlc {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.flex-rcc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex-ccl {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.flex-ccc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
