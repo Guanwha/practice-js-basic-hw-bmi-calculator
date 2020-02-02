@@ -13,10 +13,25 @@ body {
   height: 300px;
   width: 100%;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   background: #424242;
+}
+.header .icon{
+  width: 117px;
+  height: 117px;
+  margin-left: 16.89%;
+  background-image: url('../images/BMICLogo.png');
+}
+.header .input-area{
+  width: 250px;
+  height: 130px;
+  margin-left: 9.47%;
+  background: red;
+}
+.header .output-area{
+  width: 120px;
+  height: 117px;
+  margin-left: 5%;
+  background: green;
 }
 
 /* record area */
@@ -39,22 +54,5 @@ body {
 .flex-rlc {
   display: flex;
   justify-content: flex-start;
-  align-items: center;
-}
-.flex-rcc {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.flex-ccl {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-.flex-ccc {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
