@@ -23,15 +23,36 @@ body {
 }
 .header .input-area{
   width: 250px;
-  height: 130px;
   margin-left: 9.47%;
-  background: red;
 }
 .header .output-area{
   width: 120px;
   height: 117px;
   margin-left: 5%;
   background: green;
+}
+
+.input-area .item {}
+.input-area .item .item-title {
+  font-family: 'AppleSystemUIFont';
+  font-size: 18px;
+  color: #FFD366;
+}
+.input-area .item .item-field {
+  width: 250px;
+  height: 40px;
+  margin-top: 7px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background: rgba(255,255,255,0.18);
+  border: 2px solid #FFD366;
+  border-radius: 10px;
+  font-family: 'SFNSDisplay';
+  font-size: 24px;
+  color: rgba(255,255,255,0.50);
+}
+.input-area .space {
+  height: 23px;
 }
 
 /* record area */
