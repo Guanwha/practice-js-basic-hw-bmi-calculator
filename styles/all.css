@@ -110,18 +110,18 @@ body {
   border-radius: 15px;
   background: url('../images/icons_loop.png') no-repeat center center;
   background-color: #86D73E;
-  border: 3px solid #424242;
+  border: 2px solid #424242;
   outline-width: 0;
   position: absolute;
   left: 88px;
   bottom: 6px;
 }
 .show-result .btn-recalc:hover {
-  border: 3px solid #FFFFFF;
+  border: 2px solid #FFFFFF;
   box-shadow: 0 1px 6px 3px #FFFFFF;
 }
 .show-result .btn-recalc:active {
-  border: 3px solid #888888;
+  border: 2px solid #888888;
   box-shadow: 0 1px 6px 3px #888888;
 }
 .show-result .btn-save {
@@ -130,18 +130,18 @@ body {
   border-radius: 15px;
   background: url('../images/save.svg') no-repeat center center;
   background-color: #86D73E;
-  border: 3px solid #424242;
+  border: 2px solid #424242;
   outline-width: 0;
   position: absolute;
   left: 128px;
   bottom: 6px;
 }
 .show-result .btn-save:hover {
-  border: 3px solid #FFFFFF;
+  border: 2px solid #FFFFFF;
   box-shadow: 0 1px 6px 3px #FFFFFF;
 }
 .show-result .btn-save:active {
-  border: 3px solid #888888;
+  border: 2px solid #888888;
   box-shadow: 0 1px 6px 3px #888888;
 }
 
