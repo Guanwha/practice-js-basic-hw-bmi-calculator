@@ -24,6 +24,9 @@ const bmiSettings = [
     text: '肥胖'
   },
 ];
+let record = null;
+let history = JSON.parse(localStorage.getItem('history'));
+
 
 
 //=== functions ===
@@ -31,7 +34,29 @@ let calcBMI = (tall, weight) => {
   let meter = tall / 100;
   return weight / (meter * meter);
 }
+// save a record into history
+let saveToHistory = () => {
+  if (record == null) return;
 
+  let idx;
+  if(history == null) {
+    history = { maxIdx: 0, data: {} };
+    idx = 0;
+  }
+  else {
+    idx = history.maxIdx + 1;   // record index in history
+  }
+  history.maxIdx = idx;
+  history.data[idx] = {
+    'msg': record.msg,
+    'bmi': record.bmi,
+    'weight': record.weight,
+    'height': record.height,
+    'date': new Date().toLocaleString() };
+
+  // save to localStorage
+  localStorage.setItem('history', JSON.stringify(history));
+};
 
 
 //=== main code ===
@@ -77,8 +102,16 @@ let calc = () => {
     elBtnRecalc.setAttribute('style', `background-color: ${bmiSettings[bmiLevel].color}`);
     elBtnSave.setAttribute('style', `background-color: ${bmiSettings[bmiLevel].color}`);
 
+    // update record
+    record = {};
+    record['msg'] = bmiSettings[bmiLevel].text;
+    record['bmi'] = bmi;
+    record['weight'] = elFieldWeight.value;
+    record['height'] = elFieldTall.value;
+
     hasResult = true;
   }
 }
 elBtnCalc.addEventListener('click', calc);
 elBtnRecalc.addEventListener('click', calc);
+elBtnSave.addEventListener('click', saveToHistory);
