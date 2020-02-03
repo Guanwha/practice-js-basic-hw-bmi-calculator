@@ -29,6 +29,7 @@ body {
 }
 .header .output-area{
   margin-left: 5%;
+  position: relative;
 }
 
 /** input area **/
@@ -56,7 +57,7 @@ body {
 }
 
 /** result area **/
-.btn-calculate {
+.output-area .btn-calculate {
   width: 120px;
   height: 120px;
   border-radius: 60px;
@@ -64,12 +65,84 @@ body {
   font-family: 'PingFangTC-Regular';
   font-size: 24px;
   color: #424242;
+  position: absolute;
 }
 .btn-calculate:hover {
   box-shadow: 0 1px 6px 3px rgba(255,195,49,0.64);
 }
 .btn-calculate:active {
   background: #DEA921;
+}
+
+.output-area .show-result {
+  position: relative;
+}
+.show-result .result-circle {
+  width: 120px;
+  height: 120px;
+  border: 6px solid #86D73E;
+  border-radius: 60px;
+  box-shadow: 0 1px 6px 3px #86D73E inset;
+}
+.show-result .result-circle .number {
+  font-family: 'SFNSDisplay';
+  font-size: 32px;
+  color: #86D73F;
+  position: relative;
+}
+.show-result .result-circle .unit {
+  font-family: 'AppleSystemUIFont';
+  font-size: 14px;
+  color: #86D73F;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.show-result .result-text {
+  margin-left: 18px;
+  font-family: 'SFNSDisplay';
+  font-size: 32px;
+  color: #86D73E;
+}
+.show-result .btn-recalc {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  background: url('../images/icons_loop.png') no-repeat center center;
+  background-color: #86D73E;
+  border: 3px solid #424242;
+  outline-width: 0;
+  position: absolute;
+  left: 88px;
+  bottom: 6px;
+}
+.show-result .btn-recalc:hover {
+  border: 3px solid #FFFFFF;
+  box-shadow: 0 1px 6px 3px #FFFFFF;
+}
+.show-result .btn-recalc:active {
+  border: 3px solid #888888;
+  box-shadow: 0 1px 6px 3px #888888;
+}
+.show-result .btn-save {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  background: url('../images/save.svg') no-repeat center center;
+  background-color: #86D73E;
+  border: 3px solid #424242;
+  outline-width: 0;
+  position: absolute;
+  left: 128px;
+  bottom: 6px;
+}
+.show-result .btn-save:hover {
+  border: 3px solid #FFFFFF;
+  box-shadow: 0 1px 6px 3px #FFFFFF;
+}
+.show-result .btn-save:active {
+  border: 3px solid #888888;
+  box-shadow: 0 1px 6px 3px #888888;
 }
 
 
@@ -101,6 +174,12 @@ body {
 }
 .flex-rcc {
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex-ccc {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
