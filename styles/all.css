@@ -8,6 +8,8 @@ body {
   background: white;
 }
 
+
+
 /* calculator area */
 .header {
   height: 300px;
@@ -26,12 +28,10 @@ body {
   margin-left: 9.47%;
 }
 .header .output-area{
-  width: 120px;
-  height: 117px;
   margin-left: 5%;
-  background: green;
 }
 
+/** input area **/
 .input-area .item {}
 .input-area .item .item-title {
   font-family: 'AppleSystemUIFont';
@@ -55,10 +55,30 @@ body {
   height: 23px;
 }
 
+/** result area **/
+.btn-calculate {
+  width: 120px;
+  height: 120px;
+  border-radius: 60px;
+  background: #FFD366;
+  font-family: 'PingFangTC-Regular';
+  font-size: 24px;
+  color: #424242;
+}
+.btn-calculate:hover {
+  box-shadow: 0 1px 6px 3px rgba(255,195,49,0.64);
+}
+.btn-calculate:active {
+  background: #DEA921;
+}
+
+
 /* record area */
 .content {
   width: 100%;
 }
+
+
 
 /* footer */
 .footer {
@@ -71,9 +91,27 @@ body {
 }
 
 
-/*** tools ***/
+
+/* tools */
+/** flex layout **/
 .flex-rlc {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+}
+.flex-rcc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/** avoid user to select text **/
+.user-select-none {
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -o-user-select:none;
+  user-select:none;
+}
+/** hide element **/
+.hide {
+  visibility: hidden;
 }
