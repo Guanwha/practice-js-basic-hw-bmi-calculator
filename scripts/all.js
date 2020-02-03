@@ -16,9 +16,9 @@ let calcBMI = (tall, weight) => {
 let elFieldTall = document.querySelector('#tall');
 let elFieldWeight = document.querySelector('#weight');
 let elBMI = document.querySelector('#bmi');
-let elBtnCalc = document.querySelector('#btn-calc');
-let elShowResult = document.querySelector('#show-result');
-let elBtnRecalc = document.querySelector('#btn-recalc');
+let elBtnCalc = document.querySelector('.btn-calc');
+let elShowResult = document.querySelector('.show-result');
+let elBtnRecalc = document.querySelector('.btn-recalc');
 
 // listener
 let calc = () => {
@@ -29,7 +29,7 @@ let calc = () => {
   // update ui
   if (bmi) {
     // show/hide ui
-    elBtnCalc.setAttribute('class', 'btn-calculate flex-rcc user-select-none hide');
+    elBtnCalc.setAttribute('class', 'btn-calc flex-rcc user-select-none hide');
     elShowResult.setAttribute('class', 'show-result flex-rlc')
     elBMI.textContent = bmi;
     hasResult = true;

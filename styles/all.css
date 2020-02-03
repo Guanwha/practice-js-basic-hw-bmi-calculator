@@ -57,7 +57,7 @@ body {
 }
 
 /** result area **/
-.output-area .btn-calculate {
+.output-area .btn-calc {
   width: 120px;
   height: 120px;
   border-radius: 60px;
@@ -67,15 +67,16 @@ body {
   color: #424242;
   position: absolute;
 }
-.btn-calculate:hover {
+.btn-calc:hover {
   box-shadow: 0 1px 6px 3px rgba(255,195,49,0.64);
 }
-.btn-calculate:active {
+.btn-calc:active {
   background: #DEA921;
 }
 
 .output-area .show-result {
   position: relative;
+  color: #86D73E;
 }
 .show-result .result-circle {
   width: 120px;
@@ -87,13 +88,11 @@ body {
 .show-result .result-circle .number {
   font-family: 'SFNSDisplay';
   font-size: 32px;
-  color: #86D73F;
   position: relative;
 }
 .show-result .result-circle .unit {
   font-family: 'AppleSystemUIFont';
   font-size: 14px;
-  color: #86D73F;
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0);
@@ -102,7 +101,6 @@ body {
   margin-left: 18px;
   font-family: 'SFNSDisplay';
   font-size: 32px;
-  color: #86D73E;
 }
 .show-result .btn-recalc {
   width: 30px;
