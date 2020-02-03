@@ -8,21 +8,148 @@ body {
   background: white;
 }
 
+
+
 /* calculator area */
 .header {
   height: 300px;
   width: 100%;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   background: #424242;
 }
+.header .icon{
+  width: 117px;
+  height: 117px;
+  margin-left: 16.89%;
+  background-image: url('../images/BMICLogo.png');
+}
+.header .input-area{
+  width: 250px;
+  margin-left: 9.47%;
+}
+.header .output-area{
+  margin-left: 5%;
+  position: relative;
+}
+
+/** input area **/
+.input-area .item {}
+.input-area .item .item-title {
+  font-family: 'AppleSystemUIFont';
+  font-size: 18px;
+  color: #FFD366;
+}
+.input-area .item .item-field {
+  width: 250px;
+  height: 40px;
+  margin-top: 7px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background: rgba(255,255,255,0.18);
+  border: 2px solid #FFD366;
+  border-radius: 10px;
+  font-family: 'SFNSDisplay';
+  font-size: 24px;
+  color: rgba(255,255,255,0.50);
+}
+.input-area .space {
+  height: 23px;
+}
+
+/** result area **/
+.output-area .btn-calc {
+  width: 120px;
+  height: 120px;
+  border-radius: 60px;
+  background: #FFD366;
+  font-family: 'PingFangTC-Regular';
+  font-size: 24px;
+  color: #424242;
+  position: absolute;
+}
+.btn-calc:hover {
+  box-shadow: 0 1px 6px 3px rgba(255,195,49,0.64);
+}
+.btn-calc:active {
+  background: #DEA921;
+}
+
+.output-area .show-result {
+  position: relative;
+  color: #86D73E;
+}
+.show-result .result-circle {
+  width: 120px;
+  height: 120px;
+  border: 6px solid #86D73E;
+  border-radius: 60px;
+  box-shadow: 0 1px 6px 3px #86D73E inset;
+}
+.show-result .result-circle .number {
+  font-family: 'SFNSDisplay';
+  font-size: 32px;
+  position: relative;
+}
+.show-result .result-circle .unit {
+  font-family: 'AppleSystemUIFont';
+  font-size: 14px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.show-result .result-text {
+  margin-left: 18px;
+  font-family: 'SFNSDisplay';
+  font-size: 32px;
+}
+.show-result .btn-recalc {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  background: url('../images/icons_loop.png') no-repeat center center;
+  background-color: #86D73E;
+  border: 2px solid #424242;
+  outline-width: 0;
+  position: absolute;
+  left: 88px;
+  bottom: 6px;
+}
+.show-result .btn-recalc:hover {
+  border: 2px solid #FFFFFF;
+  box-shadow: 0 1px 6px 3px #FFFFFF;
+}
+.show-result .btn-recalc:active {
+  border: 2px solid #888888;
+  box-shadow: 0 1px 6px 3px #888888;
+}
+.show-result .btn-save {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  background: url('../images/save.svg') no-repeat center center;
+  background-color: #86D73E;
+  border: 2px solid #424242;
+  outline-width: 0;
+  position: absolute;
+  left: 128px;
+  bottom: 6px;
+}
+.show-result .btn-save:hover {
+  border: 2px solid #FFFFFF;
+  box-shadow: 0 1px 6px 3px #FFFFFF;
+}
+.show-result .btn-save:active {
+  border: 2px solid #888888;
+  box-shadow: 0 1px 6px 3px #888888;
+}
+
 
 /* record area */
 .content {
   width: 100%;
 }
+
+
 
 /* footer */
 .footer {
@@ -35,7 +162,9 @@ body {
 }
 
 
-/*** tools ***/
+
+/* tools */
+/** flex layout **/
 .flex-rlc {
   display: flex;
   justify-content: flex-start;
@@ -46,15 +175,20 @@ body {
   justify-content: center;
   align-items: center;
 }
-.flex-ccl {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
-}
 .flex-ccc {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+/** avoid user to select text **/
+.user-select-none {
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -o-user-select:none;
+  user-select:none;
+}
+/** hide element **/
+.hide {
+  visibility: hidden;
 }
