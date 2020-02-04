@@ -158,6 +158,7 @@ body {
   width: 90%;
   background: pink;
   margin-top: 36px;
+  margin-bottom: 36px;
   padding: 8px;
 }
 .history-list .item {
@@ -175,8 +176,6 @@ body {
   width: 100%;
   margin: 0 auto;
   background: #FFD366;
-  position: fixed;
-  bottom: 0;
 }
 
 
@@ -203,6 +202,12 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  align-items: center;
+}
+.flex-csbc {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
 }
 /** avoid user to select text **/
