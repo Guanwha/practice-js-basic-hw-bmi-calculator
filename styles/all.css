@@ -144,7 +144,7 @@ body {
 }
 
 
-/* record area */
+/* history area */
 .content {
   width: 100%;
 }
@@ -156,16 +156,15 @@ body {
 }
 .content .history-list {
   width: 90%;
-  background: pink;
-  margin-top: 36px;
+  /* background: pink; */
+  margin-top: 20px;
   margin-bottom: 36px;
-  padding: 8px;
 }
 .history-list .item {
   height: 62px;
   background: white;
   box-shadow: 0 1px 3px 0 rgba(0,0,0,0.20);
-  margin-bottom: 8px;
+  margin: 16px;
 }
 
 
