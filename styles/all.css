@@ -166,6 +166,45 @@ body {
   box-shadow: 0 1px 3px 0 rgba(0,0,0,0.20);
   margin: 16px;
 }
+.history-list .item:hover {
+  box-shadow: 0 1px 3px 0 rgba(0,0,0, 0.5);
+}
+.history-list .item:active {
+  box-shadow: 0 1px 3px 0 rgba(0,0,0, 0.9);
+}
+.flag {
+  width: 0.4375rem;
+  height: 100%; 
+}
+.flag-too-light {
+  background: #31BAF9;
+  box-shadow: 2px 0 3px 0 rgba(49,186,249,0.29);
+}
+.flag-ideal {
+  background: #86D73F;
+  box-shadow: 2px 0 3px 0 rgba(133,215,63,0.29);
+}
+.flag-too-heavy {
+  background: #FF982D;
+  box-shadow: 2px 0 3px 0 rgba(255,152,45,0.29);
+}
+.flag-obesity {
+  background: #FF1200;
+  box-shadow: 2px 0 3px 0 rgba(255,17,0,0.29);
+}
+.history-list .data {
+  width: 20%;
+  font-family: 'SFNSDisplay';
+  font-size: 1.2rem;
+  color: #4A4A4A;
+  padding: 1.2rem;
+}
+.data .small {
+  font-family: 'AppleSystemUIFont';
+  font-size: 0.75rem;
+  color: #424242;
+  margin-right: 0.4375rem;
+}
 
 
 
@@ -189,6 +228,11 @@ body {
 .flex-rcc {
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+.flex-rsbc {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 .flex-ccc {

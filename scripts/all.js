@@ -57,6 +57,43 @@ let saveToHistory = () => {
   // save to localStorage
   localStorage.setItem('history', JSON.stringify(history));
 };
+let genRecordItem = (record) => {
+  let html = `
+  <li class="item flex-rsbc" data-idx="0">
+    <div class="flag flag-too-light"></div>
+    <div class="data">${record.msg}</div>
+    <div class="data flex-rcc">
+      <div class="small">BMI</div>
+      <span>${record.bmi}</span>
+    </div>
+    <div class="data flex-rcc">
+      <div class="small">weight</div>
+      <span>${record.weight}kg</span>
+    </div>
+    <div class="data flex-rcc">
+      <div class="small">height</div>
+      <span>${record.height}</span>
+    </div>
+    <div class="data">
+      <div class="small">${record.date}</div>
+    </div>
+  </li>
+  `;
+  return html;
+};
+let genAllRecordItems = () => {
+  if (!history) return;
+
+  let innerHTML = '';
+  let n = history.maxIdx + 1;
+  for (let i=0; i<n; i++) {
+    if (history.data[i]) {
+      innerHTML += genRecordItem(history.data[i]);
+    }
+  }
+
+  elHistoryList.innerHTML = innerHTML;
+}
 
 
 //=== main code ===
@@ -69,6 +106,7 @@ let elResultCircle = document.querySelector('.result-circle');
 let elResultText = document.querySelector('.result-text');
 let elBtnRecalc = document.querySelector('.btn-recalc');
 let elBtnSave = document.querySelector('.btn-save');
+let elHistoryList = document.querySelector('.history-list');
 
 // listener
 let calc = () => {
@@ -115,3 +153,6 @@ let calc = () => {
 elBtnCalc.addEventListener('click', calc);
 elBtnRecalc.addEventListener('click', calc);
 elBtnSave.addEventListener('click', saveToHistory);
+
+// default process
+genAllRecordItems();
