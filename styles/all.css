@@ -17,18 +17,17 @@ body {
   margin: 0 auto;
   background: #424242;
 }
-.header .icon{
+.calculator .icon{
   width: 117px;
   height: 117px;
-  margin-left: 16.89%;
   background-image: url('../images/BMICLogo.png');
 }
-.header .input-area{
+.calculator .input-area{
   width: 250px;
-  margin-left: 9.47%;
+  margin-left: 97px;
+  margin-right: 53px;
 }
-.header .output-area{
-  margin-left: 5%;
+.calculator .output-area{
   position: relative;
 }
 
@@ -156,7 +155,7 @@ body {
 }
 .content .history-list {
   width: 90%;
-  /* background: pink; */
+  max-width: 960px;
   margin-top: 20px;
   margin-bottom: 36px;
 }
