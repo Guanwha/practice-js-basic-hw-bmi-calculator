@@ -157,7 +157,7 @@ body {
   width: 90%;
   max-width: 960px;
   margin-top: 20px;
-  margin-bottom: 36px;
+  margin-bottom: 58px;
 }
 .history-list .item {
   height: 62px;
@@ -203,6 +203,12 @@ body {
   font-size: 0.75rem;
   color: #424242;
   margin-right: 0.4375rem;
+}
+
+/** statement **/
+.statement {
+  color: #424242;
+  margin: 0.3rem;
 }
 
 
