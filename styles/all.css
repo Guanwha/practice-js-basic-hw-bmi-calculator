@@ -8,21 +8,204 @@ body {
   background: white;
 }
 
+
+
 /* calculator area */
 .header {
   height: 300px;
   width: 100%;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   background: #424242;
 }
+.calculator .icon{
+  width: 117px;
+  height: 117px;
+  background-image: url('../images/BMICLogo.png');
+}
+.calculator .input-area{
+  width: 250px;
+  margin-left: 97px;
+  margin-right: 53px;
+}
+.calculator .output-area{
+  position: relative;
+}
 
-/* record area */
+/** input area **/
+.input-area .item {}
+.input-area .item .item-title {
+  font-family: 'AppleSystemUIFont';
+  font-size: 18px;
+  color: #FFD366;
+}
+.input-area .item .item-field {
+  width: 250px;
+  height: 40px;
+  margin-top: 7px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background: rgba(255,255,255,0.18);
+  border: 2px solid #FFD366;
+  border-radius: 10px;
+  font-family: 'SFNSDisplay';
+  font-size: 24px;
+  color: rgba(255,255,255,0.50);
+}
+.input-area .space {
+  height: 23px;
+}
+
+/** result area **/
+.output-area .btn-calc {
+  width: 120px;
+  height: 120px;
+  border-radius: 60px;
+  background: #FFD366;
+  font-family: 'PingFangTC-Regular';
+  font-size: 24px;
+  color: #424242;
+  position: absolute;
+}
+.btn-calc:hover {
+  box-shadow: 0 1px 6px 3px rgba(255,195,49,0.64);
+}
+.btn-calc:active {
+  background: #DEA921;
+}
+
+.output-area .show-result {
+  position: relative;
+  color: #86D73E;
+}
+.show-result .result-circle {
+  width: 120px;
+  height: 120px;
+  border: 6px solid #86D73E;
+  border-radius: 60px;
+  box-shadow: 0 1px 6px 3px #86D73E inset;
+}
+.show-result .result-circle .number {
+  font-family: 'SFNSDisplay';
+  font-size: 32px;
+  position: relative;
+}
+.show-result .result-circle .unit {
+  font-family: 'AppleSystemUIFont';
+  font-size: 14px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.show-result .result-text {
+  margin-left: 18px;
+  font-family: 'SFNSDisplay';
+  font-size: 32px;
+}
+.show-result .btn-recalc {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  background: url('../images/icons_loop.png') no-repeat center center;
+  background-color: #86D73E;
+  border: 2px solid #424242;
+  outline-width: 0;
+  position: absolute;
+  left: 88px;
+  bottom: 6px;
+}
+.show-result .btn-recalc:hover {
+  border: 2px solid #FFFFFF;
+  box-shadow: 0 1px 6px 3px #FFFFFF;
+}
+.show-result .btn-recalc:active {
+  border: 2px solid #888888;
+  box-shadow: 0 1px 6px 3px #888888;
+}
+.show-result .btn-save {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  background: url('../images/save.svg') no-repeat center center;
+  background-color: #86D73E;
+  border: 2px solid #424242;
+  outline-width: 0;
+  position: absolute;
+  left: 128px;
+  bottom: 6px;
+}
+.show-result .btn-save:hover {
+  border: 2px solid #FFFFFF;
+  box-shadow: 0 1px 6px 3px #FFFFFF;
+}
+.show-result .btn-save:active {
+  border: 2px solid #888888;
+  box-shadow: 0 1px 6px 3px #888888;
+}
+
+
+/* history area */
 .content {
   width: 100%;
 }
+.content .title {
+  font-family: 'SFNSDisplay';
+  font-size: 24px;
+  color: #424242;
+  margin-top: 48px;
+}
+.content .history-list {
+  width: 90%;
+  max-width: 960px;
+  margin-top: 20px;
+  margin-bottom: 36px;
+}
+.history-list .item {
+  height: 62px;
+  background: white;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.20);
+  margin: 16px;
+}
+.history-list .item:hover {
+  box-shadow: 0 1px 3px 0 rgba(0,0,0, 0.5);
+}
+.history-list .item:active {
+  box-shadow: 0 1px 3px 0 rgba(0,0,0, 0.9);
+}
+.flag {
+  width: 0.4375rem;
+  height: 100%; 
+}
+.flag-too-light {
+  background: #31BAF9;
+  box-shadow: 2px 0 3px 0 rgba(49,186,249,0.29);
+}
+.flag-ideal {
+  background: #86D73F;
+  box-shadow: 2px 0 3px 0 rgba(133,215,63,0.29);
+}
+.flag-too-heavy {
+  background: #FF982D;
+  box-shadow: 2px 0 3px 0 rgba(255,152,45,0.29);
+}
+.flag-obesity {
+  background: #FF1200;
+  box-shadow: 2px 0 3px 0 rgba(255,17,0,0.29);
+}
+.history-list .data {
+  width: 20%;
+  font-family: 'SFNSDisplay';
+  font-size: 1.2rem;
+  color: #4A4A4A;
+  padding: 1.2rem;
+}
+.data .small {
+  font-family: 'AppleSystemUIFont';
+  font-size: 0.75rem;
+  color: #424242;
+  margin-right: 0.4375rem;
+}
+
+
 
 /* footer */
 .footer {
@@ -30,12 +213,23 @@ body {
   width: 100%;
   margin: 0 auto;
   background: #FFD366;
-  position: fixed;
-  bottom: 0;
+}
+.footer .icon{
+  width: 55px;
+  height: 55px;
+  background-image: url('../images/BMICLogo.png');
+  background-size: contain;
+
+  /* change image color */
+  position: relative;
+  left: -55px;
+  filter: drop-shadow(55px 0 0 #424242);
 }
 
 
-/*** tools ***/
+
+/* tools */
+/** flex layout **/
 .flex-rlc {
   display: flex;
   justify-content: flex-start;
@@ -46,15 +240,37 @@ body {
   justify-content: center;
   align-items: center;
 }
-.flex-ccl {
+.flex-rsbc {
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
 }
 .flex-ccc {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.flex-csac {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.flex-csbc {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+/** avoid user to select text **/
+.user-select-none {
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -o-user-select:none;
+  user-select:none;
+}
+/** hide element **/
+.hide {
+  visibility: hidden;
 }
