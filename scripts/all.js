@@ -48,7 +48,7 @@ let saveToHistory = () => {
   }
   history.maxIdx = idx;
   history.data[idx] = {
-    'msg': record.msg,
+    'bmiLevel': record.bmiLevel,
     'bmi': record.bmi,
     'weight': record.weight,
     'height': record.height,
@@ -61,7 +61,7 @@ let genRecordItem = (record) => {
   let html = `
   <li class="item flex-rsbc" data-idx="0">
     <div class="flag flag-too-light"></div>
-    <div class="data">${record.msg}</div>
+    <div class="data">${bmiSettings[record.bmiLevel].text}</div>
     <div class="data flex-rcc">
       <div class="small">BMI</div>
       <span>${record.bmi}</span>
@@ -142,7 +142,7 @@ let calc = () => {
 
     // update record
     record = {};
-    record['msg'] = bmiSettings[bmiLevel].text;
+    record['bmiLevel'] = bmiLevel;
     record['bmi'] = bmi;
     record['weight'] = elFieldWeight.value;
     record['height'] = elFieldTall.value;
