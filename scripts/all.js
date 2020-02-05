@@ -30,14 +30,17 @@ let history = JSON.parse(localStorage.getItem('history'));
 
 
 //=== functions ===
+// calculate the BMI
 let calcBMI = (tall, weight) => {
   let meter = tall / 100;
   return weight / (meter * meter);
 }
+
 // save a record into history
 let saveToHistory = () => {
   if (record == null) return;
 
+  // prepare data
   let idx;
   if(history == null) {
     history = { maxIdx: 0, data: {} };
@@ -56,7 +59,12 @@ let saveToHistory = () => {
 
   // save to localStorage
   localStorage.setItem('history', JSON.stringify(history));
+
+  // update the history list
+  genAllRecordItems();
 };
+
+// generate one record item in history list
 let genRecordItem = (record) => {
   let flagTypeStr = '';
   switch(record.bmiLevel) {
@@ -88,12 +96,13 @@ let genRecordItem = (record) => {
   `;
   return html;
 };
+
+// generate history list content
 let genAllRecordItems = () => {
   if (!history) return;
 
   let innerHTML = '';
-  let n = history.maxIdx + 1;
-  for (let i=0; i<n; i++) {
+  for (let i=history.maxIdx; i>=0; i--) {
     if (history.data[i]) {
       innerHTML += genRecordItem(history.data[i]);
     }
