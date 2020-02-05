@@ -215,6 +215,17 @@ body {
   margin: 0 auto;
   background: #FFD366;
 }
+.footer .icon{
+  width: 55px;
+  height: 55px;
+  background-image: url('../images/BMICLogo.png');
+  background-size: contain;
+
+  /* change image color */
+  position: relative;
+  left: -55px;
+  filter: drop-shadow(55px 0 0 #424242);
+}
 
 
 
