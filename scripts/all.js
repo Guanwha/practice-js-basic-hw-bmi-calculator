@@ -24,14 +24,92 @@ const bmiSettings = [
     text: '肥胖'
   },
 ];
+let record = null;
+let history = JSON.parse(localStorage.getItem('history'));
+
 
 
 //=== functions ===
+// calculate the BMI
 let calcBMI = (tall, weight) => {
   let meter = tall / 100;
   return weight / (meter * meter);
 }
 
+// save a record into history
+let saveToHistory = () => {
+  if (record == null) return;
+
+  // prepare data
+  let idx;
+  if(history == null) {
+    history = { maxIdx: 0, data: {} };
+    idx = 0;
+  }
+  else {
+    idx = history.maxIdx + 1;   // record index in history
+  }
+  history.maxIdx = idx;
+  history.data[idx] = {
+    'bmiLevel': record.bmiLevel,
+    'bmi': record.bmi,
+    'weight': record.weight,
+    'height': record.height,
+    'date': new Date().toLocaleString() };
+
+  // save to localStorage
+  localStorage.setItem('history', JSON.stringify(history));
+
+  // update the history list
+  genAllRecordItems();
+};
+
+// generate one record item in history list
+let genRecordItem = (record) => {
+  let flagTypeStr = '';
+  switch(record.bmiLevel) {
+    case 0: flagTypeStr = 'flag-too-light'; break;
+    case 1: flagTypeStr = 'flag-ideal'; break;
+    case 2: flagTypeStr = 'flag-too-heavy'; break;
+    case 3: flagTypeStr = 'flag-obesity'; break;
+  }
+  let html = `
+  <li class="item flex-rsbc" data-idx="0">
+    <div class="flag ${flagTypeStr}"></div>
+    <div class="data">${bmiSettings[record.bmiLevel].text}</div>
+    <div class="data flex-rcc">
+      <div class="small">BMI</div>
+      <span>${record.bmi}</span>
+    </div>
+    <div class="data flex-rcc">
+      <div class="small">weight</div>
+      <span>${record.weight}kg</span>
+    </div>
+    <div class="data flex-rcc">
+      <div class="small">height</div>
+      <span>${record.height}</span>
+    </div>
+    <div class="data">
+      <div class="small">${record.date}</div>
+    </div>
+  </li>
+  `;
+  return html;
+};
+
+// generate history list content
+let genAllRecordItems = () => {
+  if (!history) return;
+
+  let innerHTML = '';
+  for (let i=history.maxIdx; i>=0; i--) {
+    if (history.data[i]) {
+      innerHTML += genRecordItem(history.data[i]);
+    }
+  }
+
+  elHistoryList.innerHTML = innerHTML;
+}
 
 
 //=== main code ===
@@ -44,6 +122,7 @@ let elResultCircle = document.querySelector('.result-circle');
 let elResultText = document.querySelector('.result-text');
 let elBtnRecalc = document.querySelector('.btn-recalc');
 let elBtnSave = document.querySelector('.btn-save');
+let elHistoryList = document.querySelector('.history-list');
 
 // listener
 let calc = () => {
@@ -77,8 +156,19 @@ let calc = () => {
     elBtnRecalc.setAttribute('style', `background-color: ${bmiSettings[bmiLevel].color}`);
     elBtnSave.setAttribute('style', `background-color: ${bmiSettings[bmiLevel].color}`);
 
+    // update record
+    record = {};
+    record['bmiLevel'] = bmiLevel;
+    record['bmi'] = bmi;
+    record['weight'] = elFieldWeight.value;
+    record['height'] = elFieldTall.value;
+
     hasResult = true;
   }
 }
 elBtnCalc.addEventListener('click', calc);
 elBtnRecalc.addEventListener('click', calc);
+elBtnSave.addEventListener('click', saveToHistory);
+
+// default process
+genAllRecordItems();
