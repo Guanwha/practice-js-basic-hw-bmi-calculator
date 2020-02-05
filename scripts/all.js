@@ -58,9 +58,16 @@ let saveToHistory = () => {
   localStorage.setItem('history', JSON.stringify(history));
 };
 let genRecordItem = (record) => {
+  let flagTypeStr = '';
+  switch(record.bmiLevel) {
+    case 0: flagTypeStr = 'flag-too-light'; break;
+    case 1: flagTypeStr = 'flag-ideal'; break;
+    case 2: flagTypeStr = 'flag-too-heavy'; break;
+    case 3: flagTypeStr = 'flag-obesity'; break;
+  }
   let html = `
   <li class="item flex-rsbc" data-idx="0">
-    <div class="flag flag-too-light"></div>
+    <div class="flag ${flagTypeStr}"></div>
     <div class="data">${bmiSettings[record.bmiLevel].text}</div>
     <div class="data flex-rcc">
       <div class="small">BMI</div>
